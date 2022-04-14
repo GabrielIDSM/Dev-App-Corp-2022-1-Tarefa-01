@@ -36,5 +36,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 
 .home-list-item-box {
-    display: inline-block;
+    display: inline;
+}
+
+.home-link {
+    color: white;
 }
