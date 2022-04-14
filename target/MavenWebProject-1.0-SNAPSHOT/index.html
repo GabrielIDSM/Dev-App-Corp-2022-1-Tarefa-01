@@ -6,14 +6,31 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Demo do Tópico 1</title>
+        <title>Desenvolvimento de Aplicações Corporativas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="FontAwesome/css/all.css">
+        <link rel="stylesheet" href="styles/home.css">
     </head>
-    <body>
-        <div>Funcionalidades disponíveis:</div>
-        <p>HelloServlet.java (Método GET) (<a href=".\alomundo?lang=pt&nome=Fulano">link</a>)</p>
-        <p>Formulário de HelloWorld (usando o HelloServlet.java - Método POST) (<a href=".\helloform.html">link</a>)</p>
-        <p>Formulário de HelloWorld (usando o sayhello.jsp) (<a href=".\helloform2.html">link</a>)</p>
+    <body class="home-body">
+        <div class="home-title">
+            <p class="home-title-text h1">Lista de funcionalidades</p>
+        </div>
+        <div class="home-list">
+            <div class="home-list-item">
+                <p class="h4">HelloServlet.java (Método GET)</p>
+                <div class="home-list-item-box">
+                    <i class="fal fa-link"><a href=".\alomundo?lang=pt&nome=Fulano"></a></i>
+                </div>
+            </div>
+            <div class="home-list-item">
+                <p class="h4">Formulário de "Hello World!" (Método POST)</p>
+                <div class="home-list-item-box">
+                    <i class="fal fa-link"><a href=".\helloform.html"></a></i>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
