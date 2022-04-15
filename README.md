@@ -10,6 +10,6 @@ https://stormy-peak-44377.herokuapp.com/
 
 ## Modificação
 
-Como modificação livre, foi adicionado uma opção para definir o estilo do texto que será mostrado.
+Como modificação livre, foi adicionado uma opção para definir o estilo do texto e plano de fundo que será mostrado.
 
 
