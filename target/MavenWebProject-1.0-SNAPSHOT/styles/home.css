@@ -42,9 +42,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
 }
 
 .home-button-box {
+    display: block;
     height: 40px;
     width: 170px;
     background: rgba(245, 245, 245, 1);
     color: rgba(12, 12, 18, 1);
     margin: 0 auto;
+    border-radius: 3px;
 }
