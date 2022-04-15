@@ -138,6 +138,19 @@ public class HelloServlet extends HttpServlet {
                 break;
         }
         
+        String voct = request.getParameter("voct");
+        if(voct == null)
+            voct = "";
+        
+        switch(voct){
+            case "Sr.":
+                msg = msg + "Sr. ";
+                break;
+            case "Sra.":
+                msg = msg + "Sra. ";
+                break;
+        }
+        
         String nome = request.getParameter("name");
         if (nome == null)
             nome = "XPTO";
