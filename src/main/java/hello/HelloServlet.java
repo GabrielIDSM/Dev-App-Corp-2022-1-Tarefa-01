@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author viter
  */
-@WebServlet("/alomundo")
+@WebServlet("/helloworld")
 public class HelloServlet extends HttpServlet {
 
     /**
