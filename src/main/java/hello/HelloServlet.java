@@ -7,6 +7,7 @@ package hello;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalTime;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -113,11 +114,12 @@ public class HelloServlet extends HttpServlet {
         String msg = "";
         
         String lang = request.getParameter("lang");
-        if(lang==null)
+        if(lang == null)
             lang = "pt";
+
         switch(lang){
             case "pt":
-                msg = "Alô, ";
+                msg = "Olá, ";
                 break;
             case "en":
                 msg = "Hello, ";
@@ -128,28 +130,126 @@ public class HelloServlet extends HttpServlet {
             case "de":
                 msg = "Hallo, ";
                 break;
+            case "es":
+                msg = "Hola, ";
+                break;
+            case "it":
+                msg = "Ciao, ";
+                break;
         }
         
-        String nome = request.getParameter("nome");
-
-        if(nome==null)
-            nome = "Fulano";
+        String nome = request.getParameter("name");
+        if (nome == null)
+            nome = "XPTO";
         
-        msg = msg+nome+"!";
+        msg = msg + nome + ", ";
+        
+        LocalTime now = LocalTime.now();
+        if (now.getHour() >= 0 && now.getHour() <= 11){
+            switch(lang){
+                case "pt":
+                    msg = msg + "Bom Dia!";
+                    break;
+                case "en":
+                    msg = msg + "Good Morning!";
+                    break;
+                case "fr":
+                    msg = msg + "Bon Matin!";
+                    break;
+                case "de":
+                    msg = msg + "Guten Morgen!";
+                    break;
+                case "es":
+                    msg = msg + "Buen día!";
+                    break;
+                case "it":
+                    msg = msg + "Buongiorno!";
+                    break;
+            }
+        } else if (now.getHour() >= 12 && now.getHour() <= 18) {
+            switch(lang){
+                case "pt":
+                    msg = msg + "Bom Tarde!";
+                    break;
+                case "en":
+                    msg = msg + "Good Afternoon!";
+                    break;
+                case "fr":
+                    msg = msg + "Bon Après-midi!";
+                    break;
+                case "de":
+                    msg = msg + "Guten Tag!";
+                    break;
+                case "es":
+                    msg = msg + "Buenas Tardes!";
+                    break;
+                case "it":
+                    msg = msg + "Buon Pomeriggio!";
+                    break;
+            }
+        } else {
+            switch(lang){
+                case "pt":
+                    msg = msg + "Bom Noite!";
+                    break;
+                case "en":
+                    msg = msg + "Good Night!";
+                    break;
+                case "fr":
+                    msg = msg + "Bonne Nuit!";
+                    break;
+                case "de":
+                    msg = msg + "Gute Nacht!";
+                    break;
+                case "es":
+                    msg = msg + "Buenas Noches!";
+                    break;
+                case "it":
+                    msg = msg + "Buona Notte!";
+                    break;
+            }
+        }
+        
+        String st = "d";
+        String estilo = request.getParameter("style");
+        if (estilo == null)
+            estilo = "Normal";
+        
+        switch (estilo) {
+            case "Normal":
+                st = "d";
+                break;
+            case "Moderno":
+                st = "n";
+                break;
+            case "Antigo":
+                st = "o";
+                break;
+        }
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet HelloServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet HelloServlet</h1>");
-            out.println("<p>" + msg + "</p>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println(
+                "<!DOCTYPE html>" +
+                "<html>" +
+                "   <head>" +
+                "       <title>Desenvolvimento de Aplicações Corporativas</title>" +
+                "       <meta charset=\"UTF-8\">" +
+                "       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" +
+                "       <link rel=\"stylesheet\" href=\"Bootstrap/css/bootstrap.min.css\">" +
+                "       <link rel=\"stylesheet\" href=\"FontAwesome/css/all.css\">" +
+                "       <link rel=\"stylesheet\" href=\"styles/helloworld.css\">" +
+                "   </head>" +
+                "   <body class=\"hello-world-body\">" +
+                "       <div class=\"hello-world-div-" + st + "\">" +
+                "           <p class=\"hello-world-text-" + st + "\">" +
+                "               " + msg +
+                "           </p>" +
+                "       </div>" +
+                "   </body>" +
+                "</html>"
+            );
         }
     }
 
