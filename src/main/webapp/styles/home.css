@@ -14,6 +14,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     height: 100%;
 }
 
+.home-content {
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
 .home-title {
     width: 100vw;
     text-align: center;
@@ -33,6 +39,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     margin: 0 15%;
     align-items: center;
     text-align: center;
+}
+
+.home-list-item-text {
+    display: inline;
+    padding-right: 10px;
 }
 
 .home-list-item-box {
