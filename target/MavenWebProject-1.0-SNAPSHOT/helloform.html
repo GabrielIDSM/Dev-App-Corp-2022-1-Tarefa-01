@@ -6,20 +6,50 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Formulário de HelloWorld (usando o HelloServlet.java)</title>
+        <title>Desenvolvimento de Aplicações Corporativas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="FontAwesome/css/all.css">
+        <link rel="stylesheet" href="styles/form.css">
     </head>
-    <body>
-        <div>Formulário de HelloWorld (usando o HelloServlet.java)</div>
-           <form action="alomundo" method="post">
-           <br>Idioma: <input type="radio" name="lang" value="pt" checked> Português
-           <input type="radio" name="lang" value="en"> Inglês
-           <input type="radio" name="lang" value="fr"> Francês
-           <input type="radio" name="lang" value="de"> Alemão<br><br>
-           Nome: <input type="text" name="nome"/><br><br>
-           <input type="submit" value="Cumprimentar"/>
-        </form>
+    <body class="form-body">
+        <div class="form-content">
+            <div class="form-title">
+                <p class="form-title-text h3">Formulário de "Hello World!"</p>
+            </div>
+            <form action="helloworld" method="POST">
+                <div class="mb-3">
+                    <label><b> Idioma </b></label>
+                    <input type="radio" name="lang" value="pt" checked> Português
+                    <input type="radio" name="lang" value="en"> Inglês
+                    <input type="radio" name="lang" value="fr"> Francês
+                    <input type="radio" name="lang" value="de"> Alemão
+                    <input type="radio" name="lang" value="es"> Espanhol
+                    <input type="radio" name="lang" value="it"> Italiano
+                </div>
+                
+                <div class="mb-3">
+                    <label><b> Vocativo </b></label>
+                    <input type="radio" name="voct" value="pt" checked> Nenhum
+                    <input type="radio" name="voct" value="en"> Sr.
+                    <input type="radio" name="voct" value="fr"> Sra.
+                </div>
+                
+                <div class="mb-3">
+                    <label><b> Estilo </b></label>
+                    <input type="radio" name="style" value="pt" checked> Normal
+                    <input type="radio" name="style" value="en"> Moderno
+                    <input type="radio" name="style" value="fr"> Antigo
+                </div>
 
+                <div class="mb-3">
+                    <label><b> Nome </b></label>
+                    <input type="text" name="name"/>
+                </div>
+                <input type="submit" value="Cumprimentar"/>
+            </form>
+        </div>
     </body>
 </html>
